@@ -1,6 +1,6 @@
 
 
-import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
 
@@ -10,7 +10,7 @@ const BASE_URL = 'api.openweathermap.org/data/2.5/weather?';
 
 
 
-const Weather = async (city) => {
+export const Weather = async (city) => {
 
     try {
         const { data } = await axios.get(`${BASE_URL}q=${city}& appid=${API_KEY}`)
@@ -18,4 +18,4 @@ const Weather = async (city) => {
     } catch (err) { throw err; }
 }
 
-export default Weather;
+

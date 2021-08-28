@@ -1,17 +1,46 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Weather } from './Weather.js'
 
-const data = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=133d63b6fb36bb4cfa302d11a24ad289';
-console.log(data.main)
+import './App.css'
+
 
 function App() {
-  return (
-    <div className="">
-      hellollll<br />
+  const [city, setCity] = useState('Toronto');
+  const [weatherData, setWeatherData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
+  const getData = async () => {
+    try {
+      setIsLoading(true);
+      const data = await Weather(city);
+      setWeatherData(data);
+      setIsLoading(false);
+    }
+    catch (err) {
+      //err.message
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, [])
+
+  return (
+    <div className='app warm'>
+      <main>
+        <div className="search-box">
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="city"
+          />
+        </div>
+      </main>
     </div>
+
   );
 }
 
