@@ -1,8 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 
-import { Weather } from './Weather.js'
-
 import './App.css'
 const API_KEY = '133d63b6fb36bb4cfa302d11a24ad289'
 const BASE_URL = 'api.openweathermap.org/data/2.5/weather?';
