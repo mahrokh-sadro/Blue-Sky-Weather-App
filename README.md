@@ -1,4 +1,6 @@
 
+![](https://github.com/mahrokh-sadro/Blue-Sky-Weather-App/blob/master/2.JPG)
+
 https://blue-sky-weather-app.netlify.app/
 
 
